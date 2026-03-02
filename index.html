@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ragi_c0des. | Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #00ff41; /* Тот самый зеленый */
+            --text-color: #e0e0e0;
+            --card-bg: #141414;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-mono);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- СЕКЦИЯ ПРИВЕТСТВИЯ (HERO) --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .typing-container {
+            display: inline-block;
+        }
+
+        .typing-text {
+            font-size: clamp(2rem, 8vw, 4rem); /* Адаптивный размер */
+            font-weight: bold;
+            color: var(--accent-color);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--accent-color);
+            width: 0;
+            /* ragi_c0des = 10 символов */
+            animation: 
+                typing 2s steps(10, end) forwards,
+                blink 0.8s step-end infinite;
+        }
+
+        .hero-subtitle {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 2.5s;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 3s;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "> ";
+            margin-right: 10px;
+        }
+
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Проекты */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.05);
+        }
+
+        .project-card h4 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        /* Контакты */
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            transition: 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+            padding-left: 10px;
+        }
+
+        /* АНИМАЦИИ */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 10.5ch; } /* 10 символов + небольшой запас */
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--accent-color); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 4s;
+            color: #444;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="typing-container">
+            <div class="typing-text">ragi_c0des</div>
+        </div>
+        <div class="hero-subtitle">> Software Engineer & Creative Coder</div>
+        <div class="scroll-indicator">листай вниз, чтобы увидеть больше ▼</div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About_Me</h2>
+            <p>Я специализируюсь на разработке современных веб-приложений и автоматизации. Мой подход: минимум лишнего кода, максимум производительности.</p>
+        </section>
+
+        <section id="stack">
+            <h2>Tech_Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">JavaScript (ES6+)</div>
+                <div class="skill-item">React / Next.js</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">Git</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Neural Interface</h3>
+                    <p>Экспериментальный проект по визуализации данных нейросетей в реальном времени.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Async Scraper</h3>
+                    <p>Высокопроизводительный парсер данных на Python с использованием asyncio.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Telegram WebApp</h3>
+                    <p>Создаю Telegram-экосистемы любой сложности: от умных ботов до полнофункциональных Web App</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-links">
+            <a href="https://github.com/dsad13909-stack" target="_blank"> > GitHub</a>
+            <a href="https://t.me/freqscared" target="_blank" rel="noopener noreferrer">> Telegram</a>
+            <a href="mailto:dsad13909@gmail.com"> > Email</a>
+        </div>
+
+        <footer>
+            &copy; 2026 ragi_c0des. Инициализация завершена.
+        </footer>
+    </main>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
